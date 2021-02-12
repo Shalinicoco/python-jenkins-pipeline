@@ -1,12 +1,12 @@
 node('master') {
     stage("Fetch Source Code") {
-        git ''
+        git 'https://github.com/Shalinicoco/python-jenkins-pipeline'
     }
     
-    dir('Lesson5') {
+    dir('Start buiding') {
         printMessage('Running Pipeline')
         stage("Testing") {
-            sh 'python test_functions.py'
+            bat 'python test_functions.py'
         }
         stage("Deployment") {
             if (env.BRANCH_NAME == 'master') {
