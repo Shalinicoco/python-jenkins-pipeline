@@ -3,8 +3,6 @@ node('master') {
         git 'https://github.com/Shalinicoco/python-jenkins-pipeline'
     }
     
-    dir('Start buiding') {
-        printMessage('Running Pipeline')
         stage("Testing") {
             bat 'python test_functions.py'
         }
